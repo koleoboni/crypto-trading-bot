@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/crypto-trading-bot.Engine/crypto-trading-bot.Engine.csproj" />
+    <Project Path="src/crypto-trading-bot.Bot/crypto-trading-bot.Bot.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/crypto-trading-bot.Engine.Tests/crypto-trading-bot.Engine.Tests.csproj" />
+  </Folder>
+</Solution>
