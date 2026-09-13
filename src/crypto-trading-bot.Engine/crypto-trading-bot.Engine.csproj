@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>TradeBot.Engine</RootNamespace>
+    <AssemblyName>TradeBot.Engine</AssemblyName>
+  </PropertyGroup>
+</Project>
